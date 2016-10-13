@@ -4,29 +4,23 @@ end
 
 class Raindrops
 
-  def self.factors(number)
+  def self.convert(number)
     a = []
-    (2..number/2).each do |i|
-      if number % i == 0
-        a << i.to_s
-      end
-    end
-    return a
-  end
+    if number == 1
+      return number.to_s
+    else
 
-def self.convert(num)
-  if num == 1
-    return num.to_s
-  else
-    prime = factors(num)
-    prime.each {|n|
-  case n
-  when n == '3' then puts 'Pling'
-  when n == '5' then puts 'Plang'
-  when n == '7' then puts 'Plong'
-  else puts "#{n}"
+      (2..number).each do|i|
+        if number % i == 0
+          a << i
+        end
+      end
+      output = ""
+      output << "Pling" if a.include?(3)
+      output << "Plang" if a.include?(5)
+      output << "Plong" if a.include?(7)
+
+      output.empty? ? number.to_s : output
   end
-}
-end
-end
+  end
 end
