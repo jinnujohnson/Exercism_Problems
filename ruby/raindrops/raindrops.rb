@@ -21,6 +21,6 @@ class Raindrops
       raindrops << "Plong" if a.include?(7)
 
       raindrops.empty? ? number.to_s : raindrops
-  end
+    end
   end
 end
