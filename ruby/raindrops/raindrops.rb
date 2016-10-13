@@ -15,12 +15,12 @@ class Raindrops
           a << i
         end
       end
-      output = ""
-      output << "Pling" if a.include?(3)
-      output << "Plang" if a.include?(5)
-      output << "Plong" if a.include?(7)
+      raindrops = ""
+      raindrops << "Pling" if a.include?(3)
+      raindrops << "Plang" if a.include?(5)
+      raindrops << "Plong" if a.include?(7)
 
-      output.empty? ? number.to_s : output
+      raindrops.empty? ? number.to_s : raindrops
   end
   end
 end
