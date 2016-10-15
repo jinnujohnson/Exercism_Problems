@@ -8,17 +8,14 @@ class Squares
   end
 
   def square_of_sum
-    square_sum = (@count * (@count + 1) / 2) ** 2
-    return square_sum
+    (@count * (@count + 1) / 2) ** 2
   end
 
   def sum_of_squares
-    sum_square = (@count * (@count + 1) * (2 * @count + 1)) / 6
-    return sum_square
+    (@count * (@count + 1) * (2 * @count + 1)) / 6
   end
 
   def difference
-    diff = square_of_sum - sum_of_squares
-    return diff
+    square_of_sum - sum_of_squares
   end
 end
