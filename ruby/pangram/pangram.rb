@@ -4,7 +4,7 @@ end
 
 class Pangram
   def self.is_pangram?(str)
-    str.downcase!
-    ('a'..'z').all? { |letter| str.include?(letter) }
+    pan = str.downcase
+    ('a'..'z').all? { |letter| pan.include?(letter) }
   end
 end
