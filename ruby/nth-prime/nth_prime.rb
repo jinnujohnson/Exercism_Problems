@@ -3,32 +3,22 @@ module BookKeeping
 end
 
 class Prime
-
   def self.nth(limit)
     raise ArgumentError.new('N must be positive') if limit < 1
-   return 2 if limit == 1
-    count = 1
-    i = 1
+    return 2 if limit == 1
+    count = num = 1
 
     while count < limit
-      i += 2
-    temp = 0
-    j = 2
-    jMax = Math.sqrt(i)
-    while j <= jMax
-      if i % j == 0
-        temp = 1
+      num += 2
+      isPrime = 1
+      isFact = 2
+      jMax = Math.sqrt(num)
+      while isFact <= jMax
+        isPrime = 0  if num % isFact == 0
+        isFact += 1
       end
-      j += 1
+      count += 1 if isPrime == 1
     end
-      if temp == 0
-        count += 1
-      end
-
-    end
-if count == limit
-      return i
-    end
-
+    return num if count == limit
   end
 end
