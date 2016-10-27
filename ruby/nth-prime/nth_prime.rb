@@ -10,14 +10,14 @@ class Prime
 
     while count < limit
       num += 2
-      isPrime = 1
-      isFact = 2
-      jMax = Math.sqrt(num)
-      while isFact <= jMax
-        isPrime = 0  if num % isFact == 0
-        isFact += 1
+      is_prime = 1
+      is_fact = 2
+      jmax = Math.sqrt(num)
+      while is_fact <= jmax
+        is_prime = 0  if num % is_fact == 0
+        is_fact += 1
       end
-      count += 1 if isPrime == 1
+      count += 1 if is_prime == 1
     end
     return num if count == limit
   end
