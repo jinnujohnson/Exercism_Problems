@@ -9,11 +9,11 @@ class SumOfMultiples
     factors = []
     for i in 1...limit
       @numbers.each {|num|
-      factors << i  if i % num == 0
-        }
-      end
-      factors.uniq.each { |i| sum += i }
-      sum
+        factors << i  if i % num == 0
+      }
     end
-
+    factors.uniq.each { |i| sum += i }
+    sum
   end
+
+end
