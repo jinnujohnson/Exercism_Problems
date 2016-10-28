@@ -9,10 +9,14 @@ class Phrase
   end
 
   def word_count
-    @phrases.gsub!(/[^0-9A-Za-z']/,' ')
-    @ph = @phrases.split
-    @ph.each { |word|
-        @count[word] += 1
+    @phrases.gsub!(/[^0-9a-z']/, ' ')
+    @phrases = @phrases.split
+    @phrases.each { |word|
+      if (word[0] == "'" &&  word[-1] == "'")
+        word[0] = ""
+        word.chop!
+      end
+      @count[word] += 1
     }
     @count
   end
