@@ -1,21 +1,19 @@
 class SumOfMultiples
 
-  def initialize(first,second,third = 1)
-    @first = first
-    @second = second
-    @third = third
+  def initialize(*numbers)
+    @numbers = numbers
   end
 
   def to(limit)
     sum = 0
+    factors = []
     for i in 1...limit
-      if @third != 1
-        sum += i if (i % @first == 0 || i % @second == 0 || i % @third == 0)
-      else
-        sum += i if (i % @first == 0 || i % @second == 0)
+      @numbers.each {|num|
+      factors << i  if i % num == 0
+        }
       end
+      factors.uniq.each { |i| sum += i }
+      sum
     end
-    sum
-  end
 
-end
+  end
