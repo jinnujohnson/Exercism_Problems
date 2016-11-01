@@ -1,5 +1,5 @@
 class PhoneNumber
-attr_reader :number
+  attr_reader :number
 
   def initialize(number)
     @number = clean(number)
@@ -13,15 +13,20 @@ attr_reader :number
 
   def check(number)
     if is_valid?(number)
-        return number.length == 11 ? number.slice!(1..10) : number
+      return number.length == 11 ? number.slice!(1..10) : number
     else
       return '0' * 10
     end
   end
 
   def is_valid?(number)
-   return true if number.length == 10
-   return true if number.length == 11 && number.start_with?('1')
-   false
- end
+    return true if number.length == 10
+    return true if number.length == 11 && number.start_with?('1')
+    false
+  end
+  
+  def area_code
+    number[0..2]
+  end
+
 end
