@@ -19,7 +19,7 @@ class Series
       j = i + count - 1
       slice << @string[i..j]
     end while j < @string.length - 1
-
     slice
   end
+
 end
