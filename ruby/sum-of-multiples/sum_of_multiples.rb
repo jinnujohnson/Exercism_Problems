@@ -7,7 +7,7 @@ class SumOfMultiples
   def to(limit)
     sum = 0
     factors = []
-    for i in 1...limit
+    (1...limit).each do |i|
       @numbers.each {|num|
         factors << i  if i % num == 0
       }
