@@ -2,14 +2,15 @@ class PrimeFactors
 
   def self.for(number)
     prime = number
-    a = []
+    factors = []
     (2..prime).each do|i|
       if prime % i == 0
-        a << i
+        factors << i
         prime /= i
         redo
       end
+      break if prime < 2
     end
-    a
+    factors
   end
 end
