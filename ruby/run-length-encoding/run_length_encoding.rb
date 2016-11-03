@@ -5,12 +5,12 @@ end
 class RunLengthEncoding
 
   def self.encode(input)
-    a = ""
-    (0...(input.length)).each do |i|
-      j = i + 1
-    a << input.count(input[i]) << input[i]
-    next if input[i] == input[j]
+    array = input.chars.to_a
+    output = ""
+      array.uniq.each do |i|
+    output << input.count(i).to_s << i
   end
-  a
+  output
     end
+
 end
