@@ -7,11 +7,10 @@ class RunLengthEncoding
   def self.encode(input)
     a = ""
     (0...(input.length)).each do |i|
-      j = input[i + 1]
+      j = i + 1
     a << input.count(input[i]) << input[i]
-    continue if input[i] == input[j]
+    next if input[i] == input[j]
   end
+  a
     end
-
-
 end
