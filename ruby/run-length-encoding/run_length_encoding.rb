@@ -1,16 +1,18 @@
-module BookKeeping
-  VERSION = 2
-end
-
 class RunLengthEncoding
-
-  def self.encode(input)
-    array = input.chars.to_a
-    output = ""
-      array.uniq.each do |i|
-    output << input.count(i).to_s << i
+  def self.encode(string)
+    string.chars.map do |char, array|
+      if array.length > 1
+        [ array.length, char]
+      else
+        ['', char]
+      end
+    end.join
   end
-  output
-    end
 
+  def self.decode(string)
+    string.scan(/(\d*)(\D)/).collect do |length, char|
+      length = 1 if length.empty?
+      char * length.to_i
+    end.join
+  end
 end
