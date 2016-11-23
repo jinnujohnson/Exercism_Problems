@@ -3,14 +3,20 @@ module BookKeeping
 end
 
 class School
-  attr_writer :stud_grade
-@stud_grade = {}
+
+  def initialize
+    @stud_grade = Hash.new { |hash, key| hash[key] = [] }
+  end
+
   def students(grade)
-    stud_grade.each {|g,name| return name if g == grade }
+    stud =[]
+    @stud_grade.each {|g,name| stud << name if g == grade }
+    stud
   end
 
   def add(name,grade)
-stud_grade[grade] = name
+    @stud_grade[grade] << name
+    @stud_grade[grade].sort!
   end
 
 end
