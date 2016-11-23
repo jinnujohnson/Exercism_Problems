@@ -3,10 +3,11 @@ module BookKeeping
 end
 
 class Acronym
-  def abbreviate(acronym)
-    array = acronym.split
-    array.each do |word|
-      word[0]
+  def self.abbreviate(acronym)
+    acr = ""
+    acronym.scan(/[A-Z]+[a-z]*|[a-z]+/) do |word|
+    acr <<  word[0].upcase
     end
+    acr
   end
 end
