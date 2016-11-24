@@ -4,7 +4,7 @@ end
 
 class FlattenArray
 
-  def flatten(array)
+  def self.flatten(array)
     array.flatten.compact
   end
 
