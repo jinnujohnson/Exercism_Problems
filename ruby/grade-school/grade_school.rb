@@ -18,7 +18,7 @@ class School
   end
 
   def students_by_grade
-      @stud_grade.keys.sort.map { |grade| grade_stud_list(grade) }
+    @stud_grade.keys.sort.map { |grade| grade_stud_list(grade) }
   end
 
   def grade_stud_list(grade)
