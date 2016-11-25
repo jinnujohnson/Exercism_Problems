@@ -13,9 +13,9 @@ class Fixnum
 
   def to_roman
     num = self
-    ROMAN_NUMS.map do |ltr, val|
-      amt, num = num.divmod(val)
-      ltr * amt
+    ROMAN_NUMS.map do |roman, arabic|
+      amt, num = num.divmod(arabic)
+      roman * amt
     end.join
   end
 
